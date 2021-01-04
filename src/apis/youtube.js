@@ -1,4 +1,5 @@
 import axios from 'axios';
+require('dotenv').config();
 
 export default axios.create({
 	baseURL: 'https://www.googleapis.com/youtube/v3',
@@ -6,6 +7,6 @@ export default axios.create({
 		part: 'snippet',
 		type: 'video',
 		maxResults: 100,
-		key: 'AIzaSyATail3op31QPAgqCw96hmuM9YFZ8lJ2lU',
+		key: process.env.REACT_APP_KEY,
 	},
 });
